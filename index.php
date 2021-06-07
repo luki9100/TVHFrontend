@@ -15,9 +15,9 @@ if(session_status() == PHP_SESSION_NONE){
 
 <?php
 //load the config file
-require_once("config.php");
+require_once("conf/config.php");
 //load the URLs File
-require_once("urls.php");
+require_once("conf/urls.php");
 
 function GetURLContents($basicAuth, $URL, $username , $password){
     //set basic_auth

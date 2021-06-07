@@ -5,9 +5,9 @@ if(session_status() == PHP_SESSION_NONE){
 }
 
 //load the config file
-require_once("config.php");
+require_once("conf/config.php");
 //load the URLs File
-require_once("urls.php");
+require_once("conf/urls.php");
 
 // Required field names
 $required = array('username', 'password');
