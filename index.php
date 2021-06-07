@@ -8,7 +8,7 @@ if(session_status() == PHP_SESSION_NONE){
 
 <html>
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stlye/style.css">
     <title>TVHFrontend</title>
 <head>
 
