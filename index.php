@@ -9,7 +9,7 @@ if(session_status() == PHP_SESSION_NONE){
 <html>
 <head>
     <link rel="stylesheet" href="style/style.css">
-    <title>TVHFrontend</title>
+    <title>TVHFrontend Main Site</title>
 <head>
 
 
@@ -51,19 +51,19 @@ if($tvBasicAuth==true){
     $tvPassword = $_SESSION["password"];
 }
 
-$epgResult = GetURLContents($tvBasicAuth, $epgURL, $tvUsername, $tvPassword);
+$channelResult = GetURLContents($tvBasicAuth, $channelURL, $tvUsername, $tvPassword);
 
-$epgDecoded = json_decode($epgResult, true);
+$channelDecoded = json_decode($channelResult, true);
 
-$channels = $epgDecoded['entries'];
+$channels = $channelDecoded['entries'];
+
 
 echo("<div class=\"table-wrapper\"> <table class=\"fl-table\">");
-echo("<thead><tr><th>Channel</th><th>Programm</th><th>Play</th></tr></thead><tbody>");
+echo("<thead><tr><th>Channel</th><th>Play</th></tr></thead><tbody>");
 foreach($channels as $channel){
     echo("<tr>");
-    echo("<td>".$channel["channelName"]."</td>");
-    echo("<td>".$channel["title"]."</td>");
-    echo("<td><a href=" . $streamURL . $channel["channelUuid"].">Play</a></td>");
+    echo("<td>".$channel["name"]."</td>");
+    echo("<td><a href=" . $streamURL . $channel["uuid"].">Play</a></td>");
     echo("</tr>");
 }
 echo("</tbody></table>");
