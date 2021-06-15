@@ -8,25 +8,12 @@ if(session_status() == PHP_SESSION_NONE){
 require_once("conf/config.php");
 //load the URLs File
 require_once("conf/urls.php");
+//load Functions
+require_once("functions/GetURLContents.php");
+
 
 // Required field names
 $required = array('username', 'password');
-
-function GetURLContents($basicAuth, $URL, $username , $password){
-    //set basic_auth
-    if($basicAuth==true){
-        $opts = [
-            'http' => [
-                'method' => 'GET',
-                'header' => 'Authorization: Basic ' . base64_encode($username . ':' . $password)
-            ]
-        ];
-        //get the Result
-        return file_get_contents($URL, false, stream_context_create($opts));
-    } else {
-        //soon(TM)
-    }
-}
 
 function checkPostVars($required){
     foreach($required as $field) {
