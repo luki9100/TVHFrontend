@@ -18,27 +18,13 @@ if(session_status() == PHP_SESSION_NONE){
 require_once("conf/config.php");
 //load the URLs File
 require_once("conf/urls.php");
+//load Functions
+require_once("functions/GetURLContents.php");
 
 //set empty Username and Password, real Values weill be set later, if BasicAuth is enabled
 $tvUsername = "";
 $tvPassword = "";
 
-function GetURLContents($basicAuth, $URL, $username , $password){
-    //set basic_auth
-    if($basicAuth==true){
-        $opts = [
-            'http' => [
-                'method' => 'GET',
-                'header' => 'Authorization: Basic ' . base64_encode($username . ':' . $password)
-            ]
-        ];
-        //get the Result
-        return file_get_contents($URL, false, stream_context_create($opts));
-    } else {
-        //get the Result
-        return file_get_contents($URL);
-    }
-}
 
 if($tvBasicAuth==true){
     function checkSessionVars($required){
