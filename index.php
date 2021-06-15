@@ -19,6 +19,10 @@ require_once("conf/config.php");
 //load the URLs File
 require_once("conf/urls.php");
 
+//set empty Username and Password, real Values weill be set later, if BasicAuth is enabled
+$tvUsername = "";
+$tvPassword = "";
+
 function GetURLContents($basicAuth, $URL, $username , $password){
     //set basic_auth
     if($basicAuth==true){
@@ -31,7 +35,8 @@ function GetURLContents($basicAuth, $URL, $username , $password){
         //get the Result
         return file_get_contents($URL, false, stream_context_create($opts));
     } else {
-        //soon(TM)
+        //get the Result
+        return file_get_contents($URL);
     }
 }
 
