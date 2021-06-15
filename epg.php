@@ -72,10 +72,10 @@ $uuids = array_unique($uuids);
 
 //Display Table
 echo("<div class=\"table-wrapper\"> <table class=\"fl-table\">");
-echo("<thead><tr><th>Sender</th><th>Jetzt</th><th>Danach</th></tr></thead><tbody>");
-//Go through ever unique UUID
+echo("<thead><tr><th>Channel</th><th>Now</th><th>Next</th></tr></thead><tbody>");
+//Go through every unique UUID
 foreach($uuids as $uuid){
-    //Search for the Chanell with the UUID
+    //Search for the Chanel with the UUID
     foreach($channels as $channel){    
         if(in_array($uuid, $channel)){
             //Push channel information into array
@@ -89,7 +89,7 @@ foreach($uuids as $uuid){
     if(count($epgs) < 3){
         array_push($epgs, " ");
     }
-    //display array
+    //display array as row in table
     echo("<tr>");
     $i = 0;
     foreach($epgs as $epg){
