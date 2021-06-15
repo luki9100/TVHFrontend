@@ -82,5 +82,7 @@ foreach($channels as $channel){
 }
 echo("</tbody></table>");
 
+if($tvBasicAuth==true){
 echo("Logged in as " . $tvUsername);
+}
 ?>
