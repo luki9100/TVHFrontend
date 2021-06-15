@@ -9,6 +9,7 @@ This is still in early stages and i am an absolute newbie to programming. So ple
 - You can Login to TVH with your username and password
 - The available Channels will get listed
 - You can click on "Play" to play the channel (in my case this downloads a M3U file, which I can open with VLC)
+- Basic EPG Functionality
 
 ## What should work and is not tested
 - TVHFrontend without BasicAuth, if set in Config File
